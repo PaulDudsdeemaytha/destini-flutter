@@ -1,6 +1,6 @@
-import 'package:destini_challenge_starting/story_brain.dart';
 import 'package:flutter/material.dart';
 import 'story_brain.dart';
+
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
 void main() => runApp(Destini());
@@ -44,7 +44,7 @@ class _StoryPageState extends State<StoryPage> {
                 child: Center(
                   child: Text(
                     //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
-                    getStory(),
+                    storyBrain.getStory(),
                     style: TextStyle(
                       fontSize: 25.0,
                     ),
@@ -58,13 +58,13 @@ class _StoryPageState extends State<StoryPage> {
                     //Choice 1 made by user.
                     //TODO: Step 18 - Call the nextStory() method from storyBrain and pass the number 1 as the choice made by the user.
                     setState(() {
-                      nextStory(1);
+                      storyBrain.nextStory(1);
                     });
                   },
                   color: Colors.red,
                   child: Text(
                     //TODO: Step 13 - Use the storyBrain to get the text for choice 1.
-                    getChoice(),
+                    storyBrain.getChoice(),
                     style: TextStyle(
                       fontSize: 20.0,
                     ),
@@ -80,19 +80,19 @@ class _StoryPageState extends State<StoryPage> {
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
 
                 child: Visibility(
-                  visible: buttonShouldBeVisible(),
+                  visible: storyBrain.buttonShouldBeVisible(),
                   child: FlatButton(
                     onPressed: () {
                       //Choice 2 made by user.
                       //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
                       setState(() {
-                        nextStory(2);
+                        storyBrain.nextStory(2);
                       });
                     },
                     color: Colors.blue,
                     child: Text(
                       //TODO: Step 14 - Use the storyBrain to get the text for choice 2.
-                      getChoice2(),
+                      storyBrain.getChoice2(),
                       style: TextStyle(
                         fontSize: 20.0,
                       ),
